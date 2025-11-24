@@ -53,6 +53,11 @@
             <button type="submit">Ranking</button>
         </form>
 
+        <form action="pages/windowing.php" method="get">
+            <button type="submit">Windowing</button>
+        </form>
+
+
 
     </div>
 
