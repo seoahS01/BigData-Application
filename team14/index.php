@@ -61,6 +61,10 @@
             <button type="submit">Coach Detail</button>
         </form>
 
+        <form action="pages/transaction.php" method="get">
+            <button type="submit">Transaction</button>
+        </form>
+
     </div>
 
 </body>
