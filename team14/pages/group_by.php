@@ -1,4 +1,18 @@
 <?php
+session_start();
+
+if (isset($_POST['color'])) {
+    $_SESSION['button_color'] = $_POST['color'];
+}
+
+$button_color = $_SESSION['button_color'] ?? '#EAEAEA';
+
+function buttonStyle($color) {
+    return "background-color: $color; color: black; border: black; border: 1px solid black; cursor: pointer; padding: 10px 20px; font-size: 1em;";
+}
+?>
+
+<?php
 include '../db_connect.php';
 // 담당자 2176122 남연정
 
@@ -56,7 +70,6 @@ if ($stmt = mysqli_prepare($conn, $sql)) {
 }
 ?>
 
-// 화면
 <!DOCTYPE html>
 <html>
 <head>
@@ -94,7 +107,7 @@ if ($stmt = mysqli_prepare($conn, $sql)) {
 <body>
 
 <form action="../index.php" method="get" style="margin-bottom: 20px;">
-    <button type="submit">홈으로 가기</button>
+    <button type="submit" style="<?= buttonStyle($button_color) ?>">홈으로 가기</button>
 </form>
 
 <h1>감독별 전술 성공률</h1>
@@ -110,7 +123,7 @@ if ($stmt = mysqli_prepare($conn, $sql)) {
             </option>
         <?php endforeach; ?>
     </select>
-    <button type="submit">필터 적용</button>
+    <button type="submit" style="<?= buttonStyle($button_color) ?>">필터 적용</button>
 </form>
 
 <?php
@@ -157,3 +170,4 @@ $name_map = [
 <?php
 mysqli_close($conn);
 ?>
+
