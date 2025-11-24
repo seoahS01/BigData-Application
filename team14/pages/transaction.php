@@ -15,7 +15,7 @@ if ($action === "insert_team") {
     $team_name = trim($_POST["team_name"]);
 
     if ($team_name === "") {
-        $message = "⚠ 팀명을 입력하세요.";
+        $message = "팀명을 입력하세요.";
     } else {
 
         mysqli_begin_transaction($conn);
@@ -49,7 +49,7 @@ if ($action === "insert_coach") {
     $team_id = intval($_POST["team_id"]);
 
     if ($coach_name === "") {
-        $message = "⚠ 감독 이름을 입력하세요.";
+        $message = "감독 이름을 입력하세요.";
     } else {
         mysqli_begin_transaction($conn);
 
