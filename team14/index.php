@@ -57,7 +57,9 @@
             <button type="submit">Windowing</button>
         </form>
 
-
+        <form action="pages/coach_detail.php" method="get">
+            <button type="submit">Coach Detail</button>
+        </form>
 
     </div>
 

@@ -87,6 +87,10 @@ if (!empty($selected_coach)) {
 </head>
 <body>
 
+<form action="../index.php" method="get" style="margin-top:20px;">
+    <button type="submit">홈으로 가기</button>
+</form>
+
 <h1>감독별 전술 KPI 흐름 안정성(Windowing)</h1>
 
 <form method="POST">
