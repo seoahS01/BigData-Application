@@ -1,4 +1,18 @@
 <?php
+session_start();
+
+if (isset($_POST['color'])) {
+    $_SESSION['button_color'] = $_POST['color'];
+}
+
+$button_color = $_SESSION['button_color'] ?? '#EAEAEA';
+
+function buttonStyle($color) {
+    return "background-color: $color; color: black; border: black; border: 1px solid black; cursor: pointer; padding: 10px 20px; font-size: 1em;";
+}
+?>
+
+<?php
 
 // 담당자 2171054 황서아
 
@@ -88,7 +102,7 @@ if (!empty($selected_coach)) {
 <body>
 
 <form action="../index.php" method="get" style="margin-top:20px;">
-    <button type="submit">홈으로 가기</button>
+    <button type="submit" style="<?= buttonStyle($button_color) ?>">홈으로 가기</button>
 </form>
 
 <h1>감독별 전술 KPI 흐름 안정성(Windowing)</h1>
@@ -119,7 +133,7 @@ if (!empty($selected_coach)) {
 
     <br><br>
 
-    <button type="submit">흐름 분석 실행</button>
+    <button type="submit" style="<?= buttonStyle($button_color) ?>">흐름 분석 실행</button>
 </form>
 
 <?php if (!empty($selected_coach) && empty($rows)) { ?>
@@ -146,3 +160,4 @@ if (!empty($selected_coach)) {
 
 </body>
 </html>
+
