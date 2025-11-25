@@ -1,4 +1,5 @@
 <?php
+// 담당자 2176122 남연정
 session_start();
 
 // 세션 변수 초기화
@@ -19,3 +20,4 @@ session_destroy();
 // 세션 종료 후 기본 페이지로 이동
 header('Location: index.php');
 exit;
+
