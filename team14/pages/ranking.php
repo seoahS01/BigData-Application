@@ -1,4 +1,18 @@
 <?php
+session_start();
+
+if (isset($_POST['color'])) {
+    $_SESSION['button_color'] = $_POST['color'];
+}
+
+$button_color = $_SESSION['button_color'] ?? '#EAEAEA';
+
+function buttonStyle($color) {
+    return "background-color: $color; color: black; border: black; border: 1px solid black; cursor: pointer; padding: 10px 20px; font-size: 1em;";
+}
+?>
+
+<?php
 
 // 담당자 2171054 황서아
 
@@ -114,10 +128,10 @@ if (isset($_GET['submit'])) {
 <body>
 
 <form action="../index.php" method="get" style="margin-top:20px;">
-    <button type="submit">홈으로 가기</button>
+    <button type="submit" style="<?= buttonStyle($button_color) ?>">홈으로 가기</button>
 </form>
 
-<h1>감독 Top-N 전술 KPI 랭킹</h1>
+<h1>감독 Top-N 전술 KPI 랭킹 (Ranking)</h1>
 
 <form method="get" action="./ranking.php">
     <label>KPI(event_name):</label>
@@ -143,7 +157,7 @@ if (isset($_GET['submit'])) {
     </select>
     <br><br>
 
-    <button type="submit" name="submit">랭킹 조회</button>
+    <button type="submit" name="submit" style="<?= buttonStyle($button_color) ?>">랭킹 조회</button>
 </form>
 
 <?php if ($message): ?>
@@ -172,6 +186,11 @@ if (isset($_GET['submit'])) {
     </tbody>
 </table>
 <?php endif; ?>
+
+</body>
+</html>
+
+<?php mysqli_close($conn); ?>
 
 </body>
 </html>
