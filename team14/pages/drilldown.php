@@ -1,4 +1,5 @@
 <?php
+// 담당자 2176122 남연정
 session_start();
 
 if (isset($_POST['color'])) {
@@ -14,7 +15,6 @@ function buttonStyle($color) {
 
 <?php
 include '../db_connect.php';
-// 담당자 2176122 남연정
 
 // drilldown 데이터 반환
 if (isset($_GET['ajax']) && $_GET['ajax'] == '1') {
@@ -172,6 +172,7 @@ if ($stmt = mysqli_prepare($conn, $sql)) {
         <button type="submit" style="<?= buttonStyle($button_color) ?>" >홈으로 가기</button>
     </form>
     <h1>감독별 전술 총계</h1>
+    <h2 style="font-size:2em; margin-top:0;">(ROLL-UP & DRILL-DOWN)</h2>
 
     <form method="get" action="">
         <label for="coach">감독 선택: </label>
@@ -230,3 +231,5 @@ if ($stmt = mysqli_prepare($conn, $sql)) {
 </body>
 </html>
 <?php mysqli_close($conn); ?>
+
+
