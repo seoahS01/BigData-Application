@@ -1,4 +1,18 @@
 <?php
+session_start();
+
+if (isset($_POST['color'])) {
+    $_SESSION['button_color'] = $_POST['color'];
+}
+
+$button_color = $_SESSION['button_color'] ?? '#EAEAEA';
+
+function buttonStyle($color) {
+    return "background-color: $color; color: black; border: black; border: 1px solid black; cursor: pointer; padding: 10px 20px; font-size: 1em;";
+}
+?>
+
+<?php
 
 // 담당자 2171054 황서아
 
@@ -258,7 +272,7 @@ th, td { padding: 10px; border: 1px solid #333; }
 <body>
 
 <form action="../index.php" method="get" style="margin-top:20px;">
-    <button type="submit">홈으로 가기</button>
+    <button type="submit" style="<?= buttonStyle($button_color) ?>">홈으로 가기</button>
 </form>
 
 
@@ -289,7 +303,7 @@ th, td { padding: 10px; border: 1px solid #333; }
 <form method="POST">
     <input type="hidden" name="action" value="insert_team">
     팀명: <input type="text" name="team_name">
-    <button type="submit">추가</button>
+    <button type="submit" style="<?= buttonStyle($button_color) ?>">추가</button>
 </form>
 
 <h2>새 감독 추가</h2>
@@ -307,7 +321,7 @@ th, td { padding: 10px; border: 1px solid #333; }
         }
         ?>
     </select>
-    <button type="submit">추가</button>
+    <button type="submit" style="<?= buttonStyle($button_color) ?>">추가</button>
 </form>
 
 <h2>감독 수정</h2>
@@ -329,7 +343,7 @@ th, td { padding: 10px; border: 1px solid #333; }
     생일: <input type="date" name="birth_date">
     출생국가: <input type="text" name="birth_area">
 
-    <button type="submit">수정</button>
+    <button type="submit" style="<?= buttonStyle($button_color) ?>">수정</button>
 </form>
 
 <h2>팀 및 감독 삭제</h2>
@@ -373,7 +387,7 @@ function updateDeleteOptions() {
         ?>
     </select>
 
-    <button type="submit" style="color:red; margin-left:15px;">삭제</button>
+    <button type="submit" style="<?= buttonStyle($button_color) ?>" >삭제</button>
 </form>
 
 <script>
@@ -382,3 +396,4 @@ updateDeleteOptions();
 
 </body>
 </html>
+
