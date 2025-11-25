@@ -1,5 +1,7 @@
 <?php
-// DB 환경 변수 설정 (팀플 요구사항 충족)
+// 담당자 2176122 남연정
+
+// DB 환경 변수 설정
 $db_host = "localhost";
 $db_user = "team14";
 $db_password = "team14";
