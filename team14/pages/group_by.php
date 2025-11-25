@@ -1,4 +1,5 @@
 <?php
+// 담당자 2176122 남연정
 session_start();
 
 if (isset($_POST['color'])) {
@@ -14,7 +15,6 @@ function buttonStyle($color) {
 
 <?php
 include '../db_connect.php';
-// 담당자 2176122 남연정
 
 // 전술 데이터가 있는 감독만 조회
 $coach_list = [];
@@ -111,6 +111,7 @@ if ($stmt = mysqli_prepare($conn, $sql)) {
 </form>
 
 <h1>감독별 전술 성공률</h1>
+<h2 style="font-size:2em; margin-top:0;">(GROUP BY)</h2>
 
 <form method="get" action="">
     <label for="coach">감독 선택: </label>
@@ -170,4 +171,5 @@ $name_map = [
 <?php
 mysqli_close($conn);
 ?>
+
 
