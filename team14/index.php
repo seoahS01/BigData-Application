@@ -99,6 +99,10 @@ function buttonStyle($color) {
             <button type="submit" style="<?= buttonStyle($button_color) ?>">감독 상세보기</button>
         </form>
 
+        <form action="pages/match_detail.php" method="get">
+            <button type="submit" style="<?= buttonStyle($button_color) ?>">경기 상세보기</button>
+        </form>
+
         <form action="pages/transaction.php" method="get">
             <button type="submit" style="<?= buttonStyle($button_color) ?>">데이터 관리</button>
         </form>
