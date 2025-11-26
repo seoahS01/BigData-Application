@@ -2,6 +2,20 @@
 
 // 담당자 2171054 황서아
 
+session_start();
+
+if (isset($_POST['color'])) {
+    $_SESSION['button_color'] = $_POST['color'];
+}
+
+$button_color = $_SESSION['button_color'] ?? '#EAEAEA';
+
+function buttonStyle($color) {
+    return "background-color: $color; color: black; border: black; border: 1px solid black; cursor: pointer; padding: 10px 20px; font-size: 1em;";
+}
+?>
+
+<?php
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
