@@ -1,4 +1,7 @@
 -- dbcreate.sql
+-- 담당자 2171028 연가은
+-- 담당자 2171087 이희원
+
 
 -- team14 데이터베이스 생성
 CREATE DATABASE IF NOT EXISTS team14
