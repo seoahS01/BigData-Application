@@ -11,8 +11,9 @@ if (isset($_POST['color'])) {
 $button_color = $_SESSION['button_color'] ?? '#EAEAEA';
 
 function buttonStyle($color) {
-    return "background-color: $color; color: black; border: black; border: 1px solid black; cursor: pointer; padding: 10px 20px; font-size: 1em;";
+    return "background-color: $color; color: black; border: 1px solid black; cursor: pointer; padding: 10px 20px; font-size: 1em;";
 }
+
 ?>
 
 <?php
@@ -34,11 +35,10 @@ $game_list = mysqli_query($conn, $game_sql);
 
 // 클릭 후 경기 정보 불러오기
 $detail = null;
-$teams = [];
 
 if (!empty($selected_game)) {
 
-    // 1) 경기 기본 정보 + 심판
+    // 경기 기본 정보 + 심판 정보만
     $sql = "
         SELECT 
             mg.game_id,
@@ -57,27 +57,8 @@ if (!empty($selected_game)) {
     mysqli_stmt_execute($stmt);
     $detail_result = mysqli_stmt_get_result($stmt);
     $detail = mysqli_fetch_assoc($detail_result);
-
-    // 2) 경기 양 팀 정보
-    $team_sql = "
-        SELECT 
-            t.team_name,
-            mt.score,
-            mt.side
-        FROM match_team mt
-        JOIN team t ON mt.team_id = t.team_id
-        WHERE mt.game_id = ?
-        ORDER BY mt.side = 'home' DESC
-    ";
-    $stmt2 = mysqli_prepare($conn, $team_sql);
-    mysqli_stmt_bind_param($stmt2, "i", $selected_game);
-    mysqli_stmt_execute($stmt2);
-    $team_result = mysqli_stmt_get_result($stmt2);
-
-    while ($row = mysqli_fetch_assoc($team_result)) {
-        $teams[] = $row;
-    }
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -122,22 +103,6 @@ if (!empty($selected_game)) {
         <tr><th>날짜</th><td><?= $detail["date_utc"] ?></td></tr>
         <tr><th>경기장</th><td><?= $detail["venue"] ?></td></tr>
         <tr><th>주심</th><td><?= $detail["referee_name"] ?></td></tr>
-    </table>
-
-    <h2>팀 & 스코어</h2>
-    <table>
-        <tr>
-            <th>Side</th>
-            <th>Team</th>
-            <th>Score</th>
-        </tr>
-        <?php foreach ($teams as $t) { ?>
-        <tr>
-            <td><?= ucfirst($t["side"]) ?></td>
-            <td><?= $t["team_name"] ?></td>
-            <td><?= $t["score"] ?></td>
-        </tr>
-        <?php } ?>
     </table>
 
 <?php } ?>
