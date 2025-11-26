@@ -1,3 +1,5 @@
+-- 담당자 2171028 연가은
+-- 담당자 2171087 이희원
 
 USE team14;
 SET FOREIGN_KEY_CHECKS=0;
@@ -41,26 +43,27 @@ INSERT INTO match_game (game_id, game_week, date_utc, venue, referee_id) VALUES
 
 
 -- match_team
-INSERT INTO match_team (game_id, team_id, coach_id, side, score) VALUES (2500060,1609,7845,'home',4);
-INSERT INTO match_team (game_id, team_id, coach_id, side, score) VALUES (2500060,1633,8235,'away',1);
-INSERT INTO match_team (game_id, team_id, coach_id, side, score) VALUES (2500042,1610,272869,'home',1);
-INSERT INTO match_team (game_id, team_id, coach_id, side, score) VALUES (2500042,1633,8235,'away',1);
-INSERT INTO match_team (game_id, team_id, coach_id, side, score) VALUES (2500031,1610,272869,'home',1);
-INSERT INTO match_team (game_id, team_id, coach_id, side, score) VALUES (2500031,1624,7845,'away',3);
-INSERT INTO match_team (game_id, team_id, coach_id, side, score) VALUES (2500030,1628,8235,'home',2);
-INSERT INTO match_team (game_id, team_id, coach_id, side, score) VALUES (2500030,1633,272869,'away',0);
-INSERT INTO match_team (game_id, team_id, coach_id, side, score) VALUES (2500025,1610,272869,'home',1);
-INSERT INTO match_team (game_id, team_id, coach_id, side, score) VALUES (2500025,1628,8235,'away',0);
-INSERT INTO match_team (game_id, team_id, coach_id, side, score) VALUES (2500019,1633,8235,'home',1);
-INSERT INTO match_team (game_id, team_id, coach_id, side, score) VALUES (2500019,1609,7845,'away',0);
-INSERT INTO match_team (game_id, team_id, coach_id, side, score) VALUES (2500016,1628,8235,'home',2);
-INSERT INTO match_team (game_id, team_id, coach_id, side, score) VALUES (2500016,1624,7845,'away',1);
-INSERT INTO match_team (game_id, team_id, coach_id, side, score) VALUES (2500014,1624,7845,'home',4);
-INSERT INTO match_team (game_id, team_id, coach_id, side, score) VALUES (2500014,1610,272869,'away',1);
-INSERT INTO match_team (game_id, team_id, coach_id, side, score) VALUES (2500007,1609,7845,'home',2);
-INSERT INTO match_team (game_id, team_id, coach_id, side, score) VALUES (2500007,1628,8235,'away',3);
-INSERT INTO match_team (game_id, team_id, coach_id, side, score) VALUES (2499998,1633,8235,'home',1);
-INSERT INTO match_team (game_id, team_id, coach_id, side, score) VALUES (2499998,1624,7845,'away',1);
+INSERT INTO match_team (game_id, team_id, coach_id, side, score) VALUES (2500060, 1609, 7845, 'home', 4);
+INSERT INTO match_team (game_id, team_id, coach_id, side, score) VALUES (2500060, 1633, 8235, 'away', 1);
+INSERT INTO match_team (game_id, team_id, coach_id, side, score) VALUES (2500042, 1610, 272869, 'home', 1);
+INSERT INTO match_team (game_id, team_id, coach_id, side, score) VALUES (2500042, 1633, 8235, 'away', 1);
+INSERT INTO match_team (game_id, team_id, coach_id, side, score) VALUES (2500031, 1610, 272869, 'home', 1);
+INSERT INTO match_team (game_id, team_id, coach_id, side, score) VALUES (2500031, 1624, 3782, 'away', 3);
+INSERT INTO match_team (game_id, team_id, coach_id, side, score) VALUES (2500011, 1628, 8357, 'away', 1);
+INSERT INTO match_team (game_id, team_id, coach_id, side, score) VALUES (2500011, 1610, 272869, 'home', 2);
+INSERT INTO match_team (game_id, team_id, coach_id, side, score) VALUES (2499993, 1628, 8357, 'home', 0);
+INSERT INTO match_team (game_id, team_id, coach_id, side, score) VALUES (2499993, 1624, 292863, 'away', 1);
+INSERT INTO match_team (game_id, team_id, coach_id, side, score) VALUES (2499987, 1609, 7845, 'away', 0);
+INSERT INTO match_team (game_id, team_id, coach_id, side, score) VALUES (2499987, 1624, 3782, 'home', 1);
+INSERT INTO match_team (game_id, team_id, coach_id, side, score) VALUES (2499961, 1628, 8357, 'away', 1);
+INSERT INTO match_team (game_id, team_id, coach_id, side, score) VALUES (2499961, 1633, 8235, 'home', 1);
+INSERT INTO match_team (game_id, team_id, coach_id, side, score) VALUES (2499949, 1628, 8357, 'away', 1);
+INSERT INTO match_team (game_id, team_id, coach_id, side, score) VALUES (2499949, 1609, 7845, 'home', 4);
+INSERT INTO match_team (game_id, team_id, coach_id, side, score) VALUES (2499929, 1609, 7845, 'home', 2);
+INSERT INTO match_team (game_id, team_id, coach_id, side, score) VALUES (2499929, 1610, 272869, 'away', 2);
+INSERT INTO match_team (game_id, team_id, coach_id, side, score) VALUES (2499926, 1624, 292863, 'home', 1);
+INSERT INTO match_team (game_id, team_id, coach_id, side, score) VALUES (2499926, 1633, 8235, 'away', 1);
+
 
 
 -- player
